@@ -40,7 +40,10 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 70),
-                  Button(text: 'Get Started', onPressed: () => {}),
+                  Button(
+                    text: 'Get Started',
+                    onPressed: () => Navigator.pushNamed(context, '/home'),
+                  ),
                   const SizedBox(height: 32),
                 ],
               ),
