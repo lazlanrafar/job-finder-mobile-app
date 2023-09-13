@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_finder/shared/theme_shared.dart';
 
-class JobCard extends StatelessWidget {
+class JobCard extends StatefulWidget {
   final String logo, jobTitle, companyName, location, salary;
   final bool isActive;
 
@@ -16,6 +16,11 @@ class JobCard extends StatelessWidget {
   });
 
   @override
+  State<JobCard> createState() => _JobCardState();
+}
+
+class _JobCardState extends State<JobCard> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, '/job-detail'),
@@ -24,7 +29,7 @@ class JobCard extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           margin: EdgeInsets.only(right: defaultMargin),
           decoration: BoxDecoration(
-            color: isActive ? blueColor : Colors.white,
+            color: widget.isActive ? blueColor : Colors.white,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
@@ -36,41 +41,41 @@ class JobCard extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: isActive ? Colors.white : grayColor,
+                      color: widget.isActive ? Colors.white : grayColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     padding: const EdgeInsets.all(3),
                     child: Image.asset(
-                      logo,
+                      widget.logo,
                       width: 40,
                       height: 40,
                     ),
                   ),
                   Text(
-                    salary,
+                    widget.salary,
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: isActive ? Colors.white : primaryColor,
+                      color: widget.isActive ? Colors.white : primaryColor,
                     ),
                   )
                 ],
               ),
               const SizedBox(height: 10),
               Text(
-                jobTitle,
+                widget.jobTitle,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
-                  color: isActive ? Colors.white : primaryColor,
+                  color: widget.isActive ? Colors.white : primaryColor,
                 ),
               ),
               Text(
-                "$companyName • $location",
+                "${widget.companyName} • ${widget.location}",
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w300,
-                  color: isActive ? Colors.white : primaryColor,
+                  color: widget.isActive ? Colors.white : primaryColor,
                 ),
               ),
               const SizedBox(height: 10),

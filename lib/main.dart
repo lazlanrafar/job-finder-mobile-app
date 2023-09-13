@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/job-detail',
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
       routes: appRoutes,
       navigatorKey: GlobalKey<NavigatorState>(),
     );

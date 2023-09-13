@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_finder/shared/theme_shared.dart';
 
-class JobTile extends StatelessWidget {
+class JobTile extends StatefulWidget {
   final String logo, jobTitle, companyName, location, type, salary;
 
   const JobTile({
@@ -14,6 +14,11 @@ class JobTile extends StatelessWidget {
     required this.salary,
   });
 
+  @override
+  State<JobTile> createState() => _JobTileState();
+}
+
+class _JobTileState extends State<JobTile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -37,7 +42,7 @@ class JobTile extends StatelessWidget {
                   ),
                   padding: const EdgeInsets.all(3),
                   child: Image.asset(
-                    logo,
+                    widget.logo,
                     width: 40,
                     height: 40,
                   ),
@@ -47,7 +52,7 @@ class JobTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      companyName,
+                      widget.companyName,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -55,7 +60,7 @@ class JobTile extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      type,
+                      widget.type,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w300,
@@ -66,7 +71,7 @@ class JobTile extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  salary,
+                  widget.salary,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -77,7 +82,7 @@ class JobTile extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              jobTitle,
+              widget.jobTitle,
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
@@ -85,7 +90,7 @@ class JobTile extends StatelessWidget {
               ),
             ),
             Text(
-              location,
+              widget.location,
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w300,
