@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_finder/shared/theme_shared.dart';
 import 'package:job_finder/widgets/button_icon.dart';
 import 'package:job_finder/widgets/job_card.dart';
+import 'package:job_finder/widgets/job_tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -54,6 +55,55 @@ class HomeScreen extends StatelessWidget {
       );
     }
 
+    Widget recommendationJob() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Recommendation Job',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: primaryColor,
+            ),
+          ),
+          const SizedBox(height: 16),
+          const JobTile(
+            logo: 'assets/logo_bwa.png',
+            jobTitle: 'Software Engineer',
+            companyName: 'Tokopedia',
+            location: 'Jakarta, Indonesia',
+            type: 'Remote',
+            salary: 'Rp. 8.000.000',
+          ),
+          const JobTile(
+            logo: 'assets/logo_bwa.png',
+            jobTitle: 'Software Engineer',
+            companyName: 'Tokopedia',
+            location: 'Jakarta, Indonesia',
+            type: 'Remote',
+            salary: 'Rp. 8.000.000',
+          ),
+          const JobTile(
+            logo: 'assets/logo_bwa.png',
+            jobTitle: 'Software Engineer',
+            companyName: 'Tokopedia',
+            location: 'Jakarta, Indonesia',
+            type: 'Remote',
+            salary: 'Rp. 8.000.000',
+          ),
+          const JobTile(
+            logo: 'assets/logo_bwa.png',
+            jobTitle: 'Software Engineer',
+            companyName: 'Tokopedia',
+            location: 'Jakarta, Indonesia',
+            type: 'Remote',
+            salary: 'Rp. 8.000.000',
+          ),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Container(
@@ -92,7 +142,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            popularJob()
+            popularJob(),
+            const SizedBox(height: 32),
+            recommendationJob(),
           ],
         ),
       ),
