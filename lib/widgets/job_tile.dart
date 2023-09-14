@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_finder/shared/theme_shared.dart';
 
-class JobTile extends StatefulWidget {
+class JobTile extends StatelessWidget {
   final String logo, jobTitle, companyName, location, type, salary;
 
   const JobTile({
@@ -14,11 +14,6 @@ class JobTile extends StatefulWidget {
     required this.salary,
   });
 
-  @override
-  State<JobTile> createState() => _JobTileState();
-}
-
-class _JobTileState extends State<JobTile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,7 +37,7 @@ class _JobTileState extends State<JobTile> {
                   ),
                   padding: const EdgeInsets.all(3),
                   child: Image.asset(
-                    widget.logo,
+                    logo,
                     width: 40,
                     height: 40,
                   ),
@@ -52,7 +47,7 @@ class _JobTileState extends State<JobTile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.companyName,
+                      companyName,
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -60,7 +55,7 @@ class _JobTileState extends State<JobTile> {
                       ),
                     ),
                     Text(
-                      widget.type,
+                      type,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w300,
@@ -71,7 +66,7 @@ class _JobTileState extends State<JobTile> {
                 ),
                 const Spacer(),
                 Text(
-                  widget.salary,
+                  salary,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -82,7 +77,7 @@ class _JobTileState extends State<JobTile> {
             ),
             const SizedBox(height: 20),
             Text(
-              widget.jobTitle,
+              jobTitle,
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
@@ -90,7 +85,7 @@ class _JobTileState extends State<JobTile> {
               ),
             ),
             Text(
-              widget.location,
+              location,
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w300,

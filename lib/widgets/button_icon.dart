@@ -12,23 +12,21 @@ class ButtonIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: IconButton(
-          onPressed: onPressed,
-          icon: Image.asset(
-            icon,
-            width: 24,
-            height: 24,
-          ),
-          tooltip: 'Menu',
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.white),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+    return IconButton(
+        onPressed: onPressed,
+        icon: Image.asset(
+          icon,
+          width: 24,
+          height: 24,
+        ),
+        tooltip: 'Menu',
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.white),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
             ),
-          )),
-    );
+          ),
+        ));
   }
 }
