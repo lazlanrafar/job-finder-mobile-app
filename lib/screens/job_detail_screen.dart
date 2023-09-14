@@ -3,8 +3,15 @@ import 'package:job_finder/shared/theme_shared.dart';
 import 'package:job_finder/widgets/button.dart';
 import 'package:job_finder/widgets/button_icon.dart';
 
-class JobDetailScreen extends StatelessWidget {
+class JobDetailScreen extends StatefulWidget {
   const JobDetailScreen({super.key});
+
+  @override
+  State<JobDetailScreen> createState() => _JobDetailScreenState();
+}
+
+class _JobDetailScreenState extends State<JobDetailScreen> {
+  bool isBookmarked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,12 @@ class JobDetailScreen extends StatelessWidget {
                   ),
                   ButtonIcon(
                     icon: 'assets/ic_bookmark.png',
-                    onPressed: () => {},
+                    bgColor: isBookmarked ? Colors.yellow : Colors.white,
+                    onPressed: () => {
+                      setState(
+                        () => isBookmarked = !isBookmarked,
+                      )
+                    },
                   ),
                 ],
               ),

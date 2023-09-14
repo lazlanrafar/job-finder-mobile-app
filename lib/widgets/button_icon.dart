@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 class ButtonIcon extends StatelessWidget {
   final String icon;
+  final Color bgColor;
   final Function() onPressed;
 
   const ButtonIcon({
     super.key,
     required this.icon,
     required this.onPressed,
+    this.bgColor = Colors.white,
   });
 
   @override
@@ -21,7 +23,7 @@ class ButtonIcon extends StatelessWidget {
         ),
         tooltip: 'Menu',
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.white),
+          backgroundColor: MaterialStateProperty.all(bgColor),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
