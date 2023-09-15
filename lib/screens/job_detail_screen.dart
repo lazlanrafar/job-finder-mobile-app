@@ -13,6 +13,10 @@ class JobDetailScreen extends StatefulWidget {
 class _JobDetailScreenState extends State<JobDetailScreen> {
   bool isBookmarked = false;
 
+  void toggleBookmark() {
+    setState(() => isBookmarked = !isBookmarked);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,11 +44,7 @@ class _JobDetailScreenState extends State<JobDetailScreen> {
                   ButtonIcon(
                     icon: 'assets/ic_bookmark.png',
                     bgColor: isBookmarked ? Colors.yellow : Colors.white,
-                    onPressed: () => {
-                      setState(
-                        () => isBookmarked = !isBookmarked,
-                      )
-                    },
+                    onPressed: () => toggleBookmark(),
                   ),
                 ],
               ),
